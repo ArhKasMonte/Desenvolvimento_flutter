@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         useMaterial3: false,
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: .fromSeed(seedColor: Colors.green),
       ),
       home: Scaffold(
         appBar: AppBar(title: Text("Meu primeiro app"),
@@ -31,6 +31,7 @@ class MeuStatelessWidget extends StatefulWidget {
 }
 
 class _MeuStatelessWidgetState extends State<MeuStatelessWidget> {
+  int cont = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -41,7 +42,7 @@ class _MeuStatelessWidgetState extends State<MeuStatelessWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Meu primeiro app",
+              "$cont",
               style: TextStyle(
                 fontSize: 24,
                 color: Colors.blue
@@ -53,7 +54,10 @@ class _MeuStatelessWidgetState extends State<MeuStatelessWidget> {
           height: 24,
         ),
         ElevatedButton(
-          onPressed: () {}, 
+          onPressed: () {
+            cont++;
+            print(cont);
+          }, 
           child: Text("Clique aqui")
           )
       ],
